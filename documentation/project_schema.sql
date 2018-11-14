@@ -1,8 +1,14 @@
 -- MySQL dump 10.13  Distrib 8.0.12, for osx10.14 (x86_64)
 --
--- Host: localhost    Database: url_slug
+-- Host: localhost    Database: project
 -- ------------------------------------------------------
 -- Server version	8.0.12
+
+-- CAUTION: Will erase all data!
+DROP DATABASE IF EXISTS `project`;
+CREATE DATABASE `project`;
+USE `project`;
+-- CAUTION
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,23 +20,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `slug`
---
-
-DROP TABLE IF EXISTS `slug`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
-CREATE TABLE `slug` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `slug` varchar(12) NOT NULL,
-  `url` varchar(2048) NOT NULL,
-  `timestamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `slug` (`slug`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `visit`
@@ -46,9 +35,45 @@ CREATE TABLE `visit` (
   `timestamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `visit_fk0` (`slug_id`),
-  CONSTRAINT `visit_fk0` FOREIGN KEY (`slug_id`) REFERENCES `slug` (`id`)
+  CONSTRAINT `visit_fk0` FOREIGN KEY (`slug_id`) REFERENCES `slugger` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `visit`
+--
+
+LOCK TABLES `visit` WRITE;
+/*!40000 ALTER TABLE `visit` DISABLE KEYS */;
+/*!40000 ALTER TABLE `visit` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `slugger`
+--
+
+DROP TABLE IF EXISTS `slugger`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `slugger` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `slug` varchar(12) NOT NULL,
+  `url` varchar(2048) NOT NULL,
+  `custom` boolean DEFAULT 0,
+  `timestamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `slugger`
+--
+
+LOCK TABLES `slugger` WRITE;
+/*!40000 ALTER TABLE `slugger` DISABLE KEYS */;
+/*!40000 ALTER TABLE `slugger` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -59,4 +84,4 @@ CREATE TABLE `visit` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-11 22:28:53
+-- Dump completed on 2018-11-13  1:07:09
