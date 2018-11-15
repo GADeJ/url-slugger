@@ -1,4 +1,3 @@
-
 const visit = require("../models/visit");
 
 // TODO: Create and error message file

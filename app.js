@@ -1,4 +1,3 @@
-
 const express = require("express");
 const bodyParser = require("body-parser");
 
@@ -9,6 +8,7 @@ const projectRoutes = require("./app/routes/api");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+// Restrict header
 app.use((req, res, next) => {
 	res.header("Access-Control-Allow-Origin", "*");
 	res.header(
@@ -22,10 +22,12 @@ app.use((req, res, next) => {
 	next();
 });
 
+// Use router for API definition
 app.use("/", projectRoutes);
 
+// Handle API calls that haven't been defined
 app.use((req, res, next) => {
-	const error = new Error("Not found");
+	const error = new Error("API call not supported");
 	error.status = 404;
 	next(error);
 });

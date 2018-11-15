@@ -5,9 +5,11 @@ const sluggerController = require('../controllers/slugger');
 const visitController = require('../controllers/visit');
 
 router.get('/:slug', sluggerController.redirectUrl);
+
 router.get('/:slug/info', sluggerController.fetchInfo);
 
 router.get('/:slug/stats', visitController.fetchStats);
+
 router.get('/:slug/count', visitController.fetchCount);
 
 router.post('/', sluggerController.generateSlug);

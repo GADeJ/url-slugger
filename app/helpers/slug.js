@@ -1,13 +1,12 @@
 const shortid = require("shortid");
 
-const NUID = process.env.NODE_UNIQUE_ID || 0;
+const CONFIG = require("../../config/local")
 
 var Slug = {
 
     generate: () => {
         shortid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
-
-        shortid.worker(NUID);
+        shortid.worker(CONFIG.NUID);
         
         return shortid.generate();
     },
