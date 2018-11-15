@@ -1,15 +1,17 @@
-var connection = require('../../database');
+var connection = require('../../database/mysql');
  
+// TODO: Deal with SQL injection
 var Slugger = {
-    fetchBySlug: function(slug, callback) {
-        return connection.query("SELECT slug, url FROM slugger WHERE slug = ? AND custom = 0", [slug], callback);
+    
+    fetchBySlug: (slug, callback) => {
+        return connection.query("SELECT slug, url, timestamp FROM slugger WHERE slug = ? AND custom = 0", [slug], callback);
     },
     
-    fetchByUrl: function(url, callback) {
+    fetchByUrl: (url, callback) => {
         return connection.query("SELECT slug, url FROM slugger WHERE url = ? AND custom = 0", [url], callback);
     },
 
-    createSlug: function(slug, url, custom, callback) {
+    createSlug: (slug, url, custom, callback) => {
         return connection.query("INSERT INTO slugger (slug, url, custom) VALUES (?, ?, ?)", [slug, url, custom], callback);
     },
 
