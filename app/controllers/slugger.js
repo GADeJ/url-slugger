@@ -88,33 +88,26 @@ exports.generateSlug = (req, res, next) => {
 				utils.respondWithData(res, {slug: ret[0].slug, url: ret[0].url});
 			}
 			else {
-				if (slug.isValid(req.body.slug)) {
+				// Check if trying to create a custom slug
+				var custom = true;
 
-					// Check if trying to create a custom slug
-					var custom = slug.isValid(req.body.slug);
+				if (!slug.isValid(req.body.slug)) {
+					custom = false;
+					req.body['slug'] = slug.generate();
+				}
 
-					if (!custom) {
-						req.body['slug'] = slug.generate();
+				sluggerModel.createSlug(req.body.slug, req.body.url, custom, (err, ret, col) => {
+					if (err) {
+
+						// Return error: duplicate slug
+						utils.respondWithCode(res, 103);
 					}
+					else {
 
-					sluggerModel.createSlug(req.body.slug, req.body.url, custom, (err, ret, col) => {
-						if (err) {
-
-							// Return error: duplicate slug
-							utils.respondWithCode(res, 103);
-						}
-						else {
-
-							// Send slug to API caller
-							utils.respondWithData(res, {slug: req.body.slug, url: req.body.url});
-						}
-					});
-				}
-				else {
-
-					// Return error: slug was specified but invalid
-					utils.respondWithCode(res, 102);
-				}
+						// Send slug to API caller
+						utils.respondWithData(res, {slug: req.body.slug, url: req.body.url});
+					}
+				});
 			}
 		})
   	}
