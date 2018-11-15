@@ -1,9 +1,22 @@
-const slug = require("shortid");
+const shortid = require("shortid");
 
 const NUID = process.env.NODE_UNIQUE_ID || 0;
 
-slug.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
+var Slug = {
 
-slug.worker(NUID);
+    generate: () => {
+        shortid.characters('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@');
 
-module.exports = slug;
+        shortid.worker(NUID);
+        
+        return shortid.generate();
+    },
+
+    isValid: (slug) => {
+        // TODO: Read parameters from configuration file
+        return (slug && slug.length > 6 && slug.length < 10)
+    }
+    
+}
+
+module.exports = Slug;
