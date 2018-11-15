@@ -1,7 +1,7 @@
 # Project: url-slugger
 **URL shortner**
 
-It takes long URL and return a short URL composed of our domain followed by a slug.
+It takes a long URL and returns a short URL composed of your domain followed by a slug.
 
 note: custom slug must be 6 to 10  alpha numeric characters.
 
@@ -14,6 +14,7 @@ note: custom slug must be 6 to 10  alpha numeric characters.
 > http://domain/SSLUGG/count **(return how many time a slug has been redirected)**
 
 > http://domain/SSLUGG/stats **(return the frequency in which a slug has been refirected by day)**
+
 ### HTTP POST
 > http://domain/
 
