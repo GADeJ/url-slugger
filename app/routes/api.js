@@ -4,6 +4,9 @@ const router = express.Router();
 const sluggerController = require('../controllers/slugger');
 const visitController = require('../controllers/visit');
 
+/**
+ * API Definition
+ */
 router.get('/:slug', sluggerController.redirectUrl);
 
 router.get('/:slug/info', sluggerController.fetchInfo);

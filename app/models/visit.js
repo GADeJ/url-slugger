@@ -9,12 +9,12 @@ var Visit = {
     },
 
     fetchStatsByDay: (slug, callback) => {
-        return connection.query("SELECT YEAR(visit.timestamp) AS year," +
-                                        "MONTH(visit.timestamp) AS month," + 
-                                        "DAY(visit.timestamp) AS day," + 
+        return connection.query("SELECT YEAR(visit.timestamp) AS year, " +
+                                        "MONTH(visit.timestamp) AS month, " + 
+                                        "DAY(visit.timestamp) AS day, " + 
                                         "COUNT(visit.id) as count " +
                                 "FROM slugger, visit " + 
-                                "WHERE slugger.slug = ? AND slugger.id = visit.slug_id" + 
+                                "WHERE slugger.slug = ? AND slugger.id = visit.slug_id " + 
                                 "GROUP BY YEAR(visit.timestamp), MONTH(visit.timestamp), DAY(visit.timestamp)",
                                 [slug], callback);
     },

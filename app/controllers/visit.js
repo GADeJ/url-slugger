@@ -18,7 +18,7 @@ exports.fetchStats = (req, res, next) => {
       }
     else {
         visitModel.fetchStatsByDay(req.params.slug, (err, ret, col) => {
-
+            
             // Ensures that only one record is returned
             if (ret.length === 1){
 
