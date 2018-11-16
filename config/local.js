@@ -20,6 +20,6 @@ CONFIG.DB_PASS      = process.env.DB_PASS   || "";
 CONFIG.NUID         = process.env.NUID      || 0;
 
 CONFIG.SLUG_MIN     = 6
-CONFIG.SLUG_MIN     = 9
+CONFIG.SLUG_MAX     = 9
 
 module.exports = CONFIG;
