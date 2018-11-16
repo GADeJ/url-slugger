@@ -14,7 +14,7 @@ exports.logVist = (data, req, res, next) => {
 	if (data.slug_id > 0) {
     	visitModel.logVisit(data.slug_id, data.ipv4, (err, ret, col) => {
             if (err) {
-                utils.throwError(err);
+                throw err;
             }
     	});
   	}

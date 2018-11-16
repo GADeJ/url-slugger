@@ -17,8 +17,6 @@ var Utils = {
                 message: errorMessages[code]
             }
         });
-        // Hand off as an uncaught excption to log
-        throw new Error("Data not propagated properly from redirectUrl to logVist");
     },
     respondWithData: (res, data) => {
         res.status(200).json({
