@@ -18,10 +18,6 @@ exports.logVist = (data, req, res, next) => {
             }
     	});
   	}
-	else {
-        utils.throwError("Data not propagated properly from redirectUrl to logVist");
-	}
-
 };
 
 /**
