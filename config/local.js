@@ -19,6 +19,7 @@ CONFIG.DB_PASS      = process.env.DB_PASS   || "";
 //if f more than 1 container
 CONFIG.NUID         = process.env.NUID      || 0;
 
+// Slug length criteria for validation
 CONFIG.SLUG_MIN     = 6
 CONFIG.SLUG_MAX     = 9
 
