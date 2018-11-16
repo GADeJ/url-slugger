@@ -36,7 +36,7 @@ app.use((error, req, res, next) => {
 	res.status(error.status || 500);
 	res.json({
 		error: {
-			// TODO: Generic error messages
+			// TODO: Generic error messages handler
 			message: error.message
 		}
 	});

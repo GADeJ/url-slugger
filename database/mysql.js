@@ -1,6 +1,6 @@
-const CONFIG = require("../config/local")
+const CONFIG = require("../config/local");
 
-var mysql = require('mysql');
+var mysql = require("mysql");
 
 var connection = mysql.createPool({
     host:       CONFIG.DB_HOST,

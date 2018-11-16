@@ -4,66 +4,65 @@ const utils = require("../helpers/utils");
 const visitModel = require("../models/visit");
 
 /**
- * Total count per day of how many times a slug been accessed
+ * Details about slug: url and time created
  * 
- * @param slug
- * @return {Array} year, month, day, count
+ * @param slug_id
+ * @return {slug, url, timestamp}
  */
-exports.fetchStats = (req, res, next) => {
-
-    if (!slug.isValid(req.params.slug)) {
-
-        // Return error: Invalid slug
-        utils.respondWithCode(res, 101);
-      }
-    else {
-        visitModel.fetchStatsByDay(req.params.slug, (err, ret, col) => {
-            
-            // Ensures that only one record is returned
-            if (ret.length === 1){
-
-                // Array of elements
-                utils.respondWithData(res, ret);
+exports.logVist = (data, req, res, next) => {
+    // Ensures that the autoincrement slugger is is valid
+	if (data.slug_id > 0) {
+    	visitModel.logVisit(data.slug_id, data.ipv4, (err, ret, col) => {
+            if (err) {
+                utils.throwError(err);
             }
-            else {
-
-                // Return error: Unable to find slug
-                utils.respondWithCode(res, 101);
-            }
-        })
-    }
+    	});
+  	}
+	else {
+        utils.throwError("Data not propagated properly from redirectUrl to logVist");
+	}
 
 };
 
-
 /**
- * Total count of how many time a slug has been accessed
+ * Total count per day of how many times a slug been accessed
  * 
  * @param slug
- * @return count
+ * @return {slug, url, timestamp, created, [{year, month, day, count}]}
  */
-exports.fetchCount = (req, res, next) => {
-
+exports.fetchStats = (req, res, next) => {
     if (!slug.isValid(req.params.slug)) {
-
         // Return error: Invalid slug
         utils.respondWithCode(res, 101);
       }
     else {
-        visitModel.fetchVisitCount(req.params.slug, (err, ret, col) => {
-
+        visitModel.fetchInfo(req.params.slug, (err, ret, col) => {
             // Ensures that only one record is returned
             if (ret.length === 1){
-
                 // Assume that only one record is returned
-                utils.respondWithData(res, ret[0]);
+                var data = {
+                    slug:    ret[0].slug,
+                    url:     ret[0].url,
+                    created: ret[0].created,
+                    count:   ret[0].count,
+                }
+                visitModel.fetchStatsByDay(req.params.slug, (err, ret, col) => {
+                    // Ensures that only one record is returned
+                    if (ret.length > 0){
+                        // Array of visit frequency by day
+                        data['daily-visit-frequency'] = ret
+                        utils.respondWithData(res, data);
+                    }
+                    else {
+                        // Return error: Unable to find slug
+                        utils.respondWithCode(res, 101);
+                    }
+                });
             }
             else {
-
                 // Return error: Unable to find slug
                 utils.respondWithCode(res, 101);
             }
-        })
+        });
     }
-
 };
