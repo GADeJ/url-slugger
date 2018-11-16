@@ -48,3 +48,54 @@ $ yarn install
 ````
 $ yarn run start
 ````
+## How to test
+
+### Test case 1
+````
+Version:
+$ curl 'http://localhost:3000'
+{"api":{"version":"0.0.1"}}
+````
+
+### Test case 2
+````
+Create a short url:
+$ curl -d '{"url":"https://www.google.com"}' -H 'Content-Type: application/json' 'http://localhost.com:3000'
+{"status":"success","data":{"slug":"w$qe92Ejg","url":"https://www.google.com"}}
+````
+
+### Test case 3
+````
+Redirect to URL:
+$ curl 'http://localhost:3000/w$qe92Ejg'
+Found. Redirecting to https://www.google.com
+````
+
+### Test case 4
+````
+Create custom slug:
+$ curl -d '{"slug":"CuStOm10","url":"https://www.twitter.com"}' -H 'Content-Type: application/json' 'http://localhost.com:3000'
+{"status":"success","data":{"slug":"CuStOm10","url":"https://www.twitter.com"}}
+````
+
+### Test case 5
+````
+Retrieve stats from slug:
+$ curl -d 'http://glaudson.com/CUSTOM1'
+{
+  "status":"success",
+  "data":{
+    "slug":"CUSTOM1",
+    "url":"https://www.reddit.com",
+    "created":"2018-11-16T06:00:02.000Z",
+    "count":9,
+    "daily-visit-frequency":[
+      {
+        "year":2018,
+        "month":11,
+        "day":16,
+        "count":9
+      }]
+  }
+}
+````
