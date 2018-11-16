@@ -5,7 +5,7 @@ It takes a long URL and returns a short URL composed of your domain followed by 
 
 note: custom slug must be 6 to 10  alpha numeric characters.
 
-## Functionality
+## API Definition
 ### HTTP GET
 > http://domain/SSLUGG **(redirects to url if it exits)**
 
