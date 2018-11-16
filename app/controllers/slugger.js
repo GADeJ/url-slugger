@@ -39,7 +39,6 @@ exports.fetchInfo = (req, res, next) => {
 
 /**
  * Retrieve url from slub, redirect to it and log the visit
- * TODO: Decouple relationship by creating a new controller
  * 
  * @param slug
  * @returns 
