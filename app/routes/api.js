@@ -8,9 +8,7 @@ const visitController = require('../controllers/visit');
  * API Definition
  * TODO: Include versioning such as /api/v1/
  */
-
-// TODO: Decouple relationship by creating a new controller
-router.get('/:slug', sluggerController.redirectUrl);
+router.post('/', sluggerController.generateSlug);
 
 router.get('/:slug/info', sluggerController.fetchInfo);
 
@@ -18,7 +16,8 @@ router.get('/:slug/stats', visitController.fetchStats);
 
 router.get('/:slug/count', visitController.fetchCount);
 
-router.post('/', sluggerController.generateSlug);
+// TODO: Decouple relationship between controllers
+router.get('/:slug', sluggerController.redirectUrl);
 
 router.get("/", (req, res) => {
 	res.json({
