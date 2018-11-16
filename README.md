@@ -19,9 +19,9 @@ note: custom slug must be 6 to 10  alpha numeric characters.
 > http://domain/
 
 ```
-{"slug": CUSTSLUG, "url": "https://www.longurl.com/series/of/characters"} (creates a custom slug)
-{"url": "https://www.longurl.com/somelong/series/of/characters"}          (creates a random slug)
-{"url": "https://www.longurl.com/somelong/series/of/characters"}          (returns slug beloging to url)
+{"slug": "CUSTSLUG", "url": "https://www.longurl.com/series/of/characters"} (creates a custom slug)
+{"url": "https://www.longurl.com/somelong/series/of/characters"}            (creates a random slug)
+{"url": "https://www.longurl.com/somelong/series/of/characters"}            (returns slug beloging to url)
 ```
 
 ## Tech Stack
