@@ -31,7 +31,7 @@ exports.redirectUrl = (req, res, next) => {
 			}
 			else {
 				// Return error: Unable to find slug
-				utils.respondWithCode(res, 101);
+				utils.respondWithCode(res, 105);
 			}
 		});
 	}
