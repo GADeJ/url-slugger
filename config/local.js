@@ -5,8 +5,8 @@ let CONFIG = {}
 
 CONFIG.APP      = process.env.APP       || "url-slugger";
 
-CONFIG.HOST     = process.env.HOST      || "http://localhost";
-CONFIG.PORT     = process.env.PORT      || "3000";
+CONFIG.HOST     = process.env.HOST      || "localhost";
+CONFIG.PORT     = process.env.PORT      || 3000;
 
 CONFIG.DB_HOST  = process.env.DB_HOST   || "localhost";
 CONFIG.DB_NAME  = process.env.DB_NAME   || "slugger_development";
