@@ -17,6 +17,9 @@ CONFIG.DB_PASS      = process.env.DB_PASS   || "";
 
 // Node Id for worker to generate unique slugs
 //if f more than 1 container
-CONFIG.NUID     = process.env.NUID      || 0;
+CONFIG.NUID         = process.env.NUID      || 0;
+
+CONFIG.SLUG_MIN     = 6
+CONFIG.SLUG_MIN     = 9
 
 module.exports = CONFIG;

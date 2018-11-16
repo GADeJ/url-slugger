@@ -12,7 +12,7 @@ var Slug = {
     // TODO: Unit test
     isValid: (slug) => {
         // TODO: Read parameters from configuration file
-        return (slug && slug.length > 6 && slug.length < 10);
+        return (slug && slug.length >= CONFIG.SLUG_MIN  && slug.length <= CONFIG.SLUG_MAX);
     }
 }
 
