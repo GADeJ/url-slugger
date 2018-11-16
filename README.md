@@ -21,9 +21,9 @@ note: custom slug must be 6 to 10  alpha numeric characters.
 ```
 
 ## Tech Stack
-* mysql version 8.0.12
+* mysql version > 5.7.24
 * yarn version 1.12.3
-* nodejs version 11.0.0
+* nodejs version >8.10.0
   * Modules:
     * See package.json
 
