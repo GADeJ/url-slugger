@@ -18,7 +18,6 @@ router.get("/:slug/stats", visitController.fetchStats);
 
 // API root responds with version
 router.get("/", (req, res) => {
-
     res.json({
         api: {
             version: CONFIG.VER_MAJOR + "." +
@@ -26,7 +25,6 @@ router.get("/", (req, res) => {
                      CONFIG.VER_BUILD
         }
     });
-
 });
 
 module.exports = router;

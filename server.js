@@ -15,7 +15,7 @@ const server = http.createServer(app);
 server.listen(CONFIG.PORT, CONFIG.HOST, () => {
     console.log("%s API v%s server started on %s:%d (Press CTRL+C to quit)",
                 CONFIG.APP,
-                CONFIG.VER,
+                CONFIG.VER_MAJOR + "." + CONFIG.VER_MINOR + "." + CONFIG.VER_BUILD,
                 CONFIG.HOST,
                 CONFIG.PORT);
 });
