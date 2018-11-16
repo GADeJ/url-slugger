@@ -7,7 +7,7 @@ note: custom slug must be 6 to 10  alpha numeric characters.
 
 ## API Definition
 ### HTTP GET
-> http://domain/SSLUGG        **(redirects to url if it exits)**
+> http://slug.co/SSLUGG **(redirects to url if it exits)**
 
 > http://slug.co/SSLUGG/stats **(returns slug details with the daily visit frequency up to 60 days)**
 
