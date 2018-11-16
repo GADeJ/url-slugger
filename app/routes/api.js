@@ -6,7 +6,7 @@ const visitController = require('../controllers/visit');
 
 /**
  * API Definition
- * TODO: Include versioning such as /api/v1/
+ * 
  */
 router.post('/', sluggerController.generateSlug);
 
@@ -17,6 +17,7 @@ router.get('/:slug/stats', visitController.fetchStats);
 router.get('/:slug/count', visitController.fetchCount);
 
 // TODO: Decouple relationship between controllers
+//       Redirecting should possibly be done at the front-end
 router.get('/:slug', sluggerController.redirectUrl);
 
 router.get("/", (req, res) => {

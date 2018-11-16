@@ -5,9 +5,9 @@
 -- Server version	8.0.12
 
 -- CAUTION: Will erase all data!
-DROP DATABASE IF EXISTS `project`;
-CREATE DATABASE `project`;
-USE `project`;
+DROP DATABASE IF EXISTS `slugger_production`;
+CREATE DATABASE `slugger_production`;
+USE `slugger_production`;
 -- CAUTION
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
