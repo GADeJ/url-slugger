@@ -21,8 +21,8 @@ router.get("/", (req, res) => {
 
     res.json({
         api: {
-            version: CONFIG.VER_MAJOR + "." + 
-                     CONFIG.VER_MAJOR + "." + 
+            version: CONFIG.VER_MAJOR + "." +
+                     CONFIG.VER_MAJOR + "." +
                      CONFIG.VER_BUILD
         }
     });

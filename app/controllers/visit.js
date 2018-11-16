@@ -5,7 +5,7 @@ const visitModel = require("../models/visit");
 
 /**
  * Details about slug: url and time created
- * 
+ *
  * @param slug_id
  * @return {slug, url, timestamp}
  */
@@ -26,7 +26,7 @@ exports.logVist = (data, req, res, next) => {
 
 /**
  * Total count per day of how many times a slug been accessed
- * 
+ *
  * @param slug
  * @return {slug, url, timestamp, created, [{year, month, day, count}]}
  */
