@@ -4,8 +4,7 @@ var connection = require("../../database/mysql");
 var Slugger = {
 
     fetchBySlug: (slug, callback) => {
-        return connection.query("SELECT id, slug, url, timestamp FROM slugger " +
-                                "WHERE slug = ? AND custom = 0",
+        return connection.query("SELECT id, url FROM slugger WHERE slug = ?",
                                 [slug], callback);
     },
 
