@@ -5,7 +5,7 @@ const errorMessages = {
     101: "System not responding",
     102: "Invalid slug",
     103: "Unable to create slug",
-    104: "Unspecified url"
+    104: "Unspecified url",
     105: "Slug not found"
 }
 
