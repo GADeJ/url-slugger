@@ -4,12 +4,12 @@ var connection = require("../../database/mysql");
 var Slugger = {
 
     fetchBySlug: (slug, callback) => {
-        return connection.query("SELECT id, url FROM slugger WHERE slug = ?",
+        return connection.query("SELECT id, url FROM slugger WHERE BINARY slug = ?",
                                 [slug], callback);
     },
 
     fetchByUrl: (url, callback) => {
-        return connection.query("SELECT slug, url FROM slugger WHERE url = ? AND custom = 0",
+        return connection.query("SELECT slug, url FROM slugger WHERE BINARY url = ? AND custom = 0",
                                 [url], callback);
     },
 
