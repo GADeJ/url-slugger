@@ -28,13 +28,14 @@ note: custom slug must be 6 to 10  alpha numeric characters.
     * See package.json
 
 ## How to run
-1. Ensure that you have the software about already installed
+1. Ensure that you have the software above already installed
 2. Clone this repository
-3. Create database and tables using project_schema.sql in the documentation directory
+3. COnfigure mysql then import slugger_database_schema.sql located in documentation directory
 4. Create the following environment variables:
 ````
 $ export DB_USER="username"
-$ export DB_PWD="YourDatabasePassword"
+$ export DB_PASS="youpassword"
+$ export DB_NAME="databasename"
 ````
 5. Install required node modules
 ````
