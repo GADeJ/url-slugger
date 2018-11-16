@@ -7,16 +7,12 @@ note: custom slug must be 6 to 10  alpha numeric characters.
 
 ## API Definition
 ### HTTP GET
-> http://domain/SSLUGG **(redirects to url if it exits)**
+> http://domain/SSLUGG        **(redirects to url if it exits)**
 
-> http://domain/SSLUGG/info **(returns slug infromation: slug, url, date and time created)**
-
-> http://domain/SSLUGG/count **(return how many time a slug has been redirected)**
-
-> http://domain/SSLUGG/stats **(return the frequency in which a slug has been refirected by day)**
+> http://slug.co/SSLUGG/stats **(returns slug details with the daily visit frequency up to 60 days)**
 
 ### HTTP POST
-> http://domain/
+> http://slug.co/
 
 ```
 {"slug": "CUSTSLUG", "url": "https://www.longurl.com/series/of/characters"} (creates a custom slug)
