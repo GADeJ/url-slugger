@@ -62,3 +62,4 @@ typings/
 
 # Mac file
 .DS_Store
+*.lock
