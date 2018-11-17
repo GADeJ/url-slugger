@@ -26,7 +26,7 @@ exports.redirectUrl = (req, res, next) => {
 				// to Visit constroller logVisit menthod
 				next({
 					slug_id: ret[0].id,
-					ipv4: req.headers['x-forwarded-for'] || req.connection.remoteAddress
+					ipv4: req.headers['X-Real-IP'] || req.connection.remoteAddress
 				});
 			}
 			else {
