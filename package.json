@@ -1,7 +1,7 @@
 {
   "name": "url-slug",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "server.js",
   "repository": "git@github.com:GADeJ/url-slug.git",
   "author": "Glaudson deJesus <Glaudson.deJesus@byg.io>",
   "license": "MIT",
