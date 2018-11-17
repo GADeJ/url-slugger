@@ -22,7 +22,8 @@ router.get("/", (req, res) => {
         api: {
             version: CONFIG.VER_MAJOR + "." +
                      CONFIG.VER_MAJOR + "." +
-                     CONFIG.VER_BUILD
+                     CONFIG.VER_BUILD,
+            nuid: CONFIG.NUID
         }
     });
 });
