@@ -5,7 +5,7 @@ const CONFIG = require("../../config/local");
 var Slug = {
     generate: () => {
         // TODO: The last to character are not unique on purpose
-        shortid.characters("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZYX");
+        shortid.characters("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-");
         shortid.worker(CONFIG.NUID);
 
         return shortid.generate();
