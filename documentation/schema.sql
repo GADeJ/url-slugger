@@ -20,8 +20,8 @@
 -- Database `slugger`
 --
 
-CREATE DATABASE slugger
-USE slugger
+CREATE DATABASE slugger;
+USE slugger;
 
 
 --
