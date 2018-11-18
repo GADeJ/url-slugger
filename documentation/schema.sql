@@ -15,6 +15,14 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+--
+-- API user
+--
+
+CREATE USER 'api'@'%' IDENTIFIED WITH mysql_native_password BY '!EasyD0351t;';
+GRANT ALL PRIVILEGES ON *.* TO 'api'@'%';
+FLUSH PRIVILEGES;
+
 
 --
 -- Database `slugger`
