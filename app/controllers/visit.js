@@ -62,7 +62,5 @@ exports.fetchStats = (req, res, next) => {
                 utils.respondWithCode(res, 101);
             }
         });
-        // Database unreacheable
-		utils.respondWithCode(res, 106);
     }
 };
