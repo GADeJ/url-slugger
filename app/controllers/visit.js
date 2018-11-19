@@ -41,10 +41,10 @@ exports.fetchStats = (req, res, next) => {
             if (ret.length === 1) {
                 // Assume that only one record is returned
                 var data = {
-                    slug:    ret[0].slug,
-                    url:     ret[0].url,
-                    created: ret[0].created,
-                    count:   ret[0].count
+                    slug            : ret[0].slug,
+                    url             : ret[0].url,
+                    created         : ret[0].created,
+                    "total-visits"  : ret[0].count
                 }
                 visitModel.fetchUniqueVisitors(ret[0].id, (err, ret, col) => {
                     if (ret.length === 1) {

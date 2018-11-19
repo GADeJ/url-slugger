@@ -21,7 +21,8 @@ var Visit = {
                                 [slug], callback);
     },
     fetchInfo: (slug, callback) => {
-        return connection.query("SELECT slugger.slug AS slug, " +
+        return connection.query("SELECT slugger.id AS id, " +
+                                "slugger.slug AS slug, " +
                                 "slugger.url AS url, " +
                                 "slugger.timestamp AS created, " +
                                 "COUNT(visit.id) AS count " +
