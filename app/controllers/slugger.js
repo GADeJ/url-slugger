@@ -22,7 +22,7 @@ exports.redirectUrl = (req, res, next) => {
 				// Since is the the main purpose of this app ensure that
 				// the client is redirected first
 				//res.redirect(ret[0].url);
-				res.send(ret.headers)
+				res.send(ret.ip)
 				// Assume that only one record is returned and pass data
 				// to Visit constroller logVisit menthod
 				next({
