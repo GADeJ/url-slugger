@@ -18,8 +18,10 @@ exports.logVist = (data, req, res, next) => {
             }
     	});
       }
+    else {
       // Throw error so it's caught by the system log
       throw new Error("Unable to log visit");
+    }
 };
 
 /**
