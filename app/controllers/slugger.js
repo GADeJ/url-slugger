@@ -23,11 +23,11 @@ exports.redirectUrl = (req, res, next) => {
 				// the client is redirected first
 				//res.redirect(ret[0].url);
 				var ipa = "1:" + req.ip +
-						  "2:" + req.connection.remoteAddress
-						  "3:" + headers['X-Real-IP'] +
-						  "4:" + headers['x-real-ip'] +
-						  "5:" + headers['X-Forwarded-For'] +
-						  "6:" + headers['x-forwarded-for']
+						  "2:" + req.connection.remoteAddress +
+						  "3:" + req.headers['X-Real-IP'] +
+						  "4:" + req.headers['x-real-ip'] +
+						  "5:" + req.headers['X-Forwarded-For'] +
+						  "6:" + req.headers['x-forwarded-for']
 				res.send(ipa);		  
 				// Assume that only one record is returned and pass data
 				// to Visit constroller logVisit menthod
