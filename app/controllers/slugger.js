@@ -22,12 +22,12 @@ exports.redirectUrl = (req, res, next) => {
 				// Since is the the main purpose of this app ensure that
 				// the client is redirected first
 				//res.redirect(ret[0].url);
-				var ipa = "1:" + req.ip + "\n" +
-						  "2:" + req.connection.remoteAddress + "\n" +
-						  "3:" + headers['X-Real-IP'] + "\n" +
-						  "4:" + headers['x-real-ip'] + "\n" +
-						  "5:" + headers['X-Forwarded-For'] + "\n" +
-						  "6:" + headers['x-forwarded-for'] + "\n" +
+				var ipa = "1:" + req.ip +
+						  "2:" + req.connection.remoteAddress
+						  "3:" + headers['X-Real-IP'] +
+						  "4:" + headers['x-real-ip'] +
+						  "5:" + headers['X-Forwarded-For'] +
+						  "6:" + headers['x-forwarded-for']
 				res.send(ipa);		  
 				// Assume that only one record is returned and pass data
 				// to Visit constroller logVisit menthod
