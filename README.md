@@ -1,3 +1,7 @@
+### Currently hosted @ http://glaudson.com
+
+----
+
 # Project: url-slugger
 **URL shortner**
 
