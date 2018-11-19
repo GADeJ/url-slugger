@@ -78,7 +78,7 @@ $ curl -d '{"slug":"CuStOm10","url":"https://www.twitter.com"}' -H 'Content-Type
 ### Test case 5
 ````
 Retrieve stats from slug:
-$ curl -d 'http://glaudson.com/CUSTOM1'
+$ curl -d 'http://glaudson.com/IfhMQxiTl'
 {
     "status": "success",
     "data": {
