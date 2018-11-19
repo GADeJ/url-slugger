@@ -31,7 +31,7 @@ var Visit = {
                                 [slug], callback);
     },
     fetchUniqueVisitors: (slug_id, callback) => {
-        return connection.query("SELECT COUNT(DISTINCT ipv4) " +
+        return connection.query("SELECT COUNT(DISTINCT ipv4) AS unique" +
                                 "FROM visit " +
                                 "WHERE visit.slug_id = ?",
                                 [slug_id], callback);
