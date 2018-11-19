@@ -18,7 +18,7 @@ exports.redirectUrl = (req, res, next) => {
 	else {
 		sluggerModel.fetchBySlug(req.params.slug, (err, ret, col) => {
 			// Ensures that only one record is returned
-			if (ret.length === 1){
+			if (ret.length === 1) {
 				// Since is the the main purpose of this app ensure that
 				// the client is redirected first
 				res.redirect(ret[0].url);
@@ -53,7 +53,7 @@ exports.generateSlug = (req, res, next) => {
 			}
 			else {
 				// Check is slug in empty then return the slug that was found
-				if (ret.length > 0 && !req.body.slug){
+				if (ret.length > 0 && !req.body.slug) {
 					// Assume that only one record is returned
 					utils.respondWithData(res, {slug: ret[0].slug, url: ret[0].url});
 				}

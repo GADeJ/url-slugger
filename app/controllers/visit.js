@@ -38,7 +38,7 @@ exports.fetchStats = (req, res, next) => {
     else {
         visitModel.fetchInfo(req.params.slug, (err, ret, col) => {
             // Ensures that only one record is returned
-            if (ret.length === 1){
+            if (ret.length === 1) {
                 // Assume that only one record is returned
                 var data = {
                     slug:    ret[0].slug,
@@ -47,13 +47,13 @@ exports.fetchStats = (req, res, next) => {
                     count:   ret[0].count,
                 }
                 visitModel.fetchUniqueVisitors(ret[0].id, (err, ret, col) => {
-                    if (ret.length === 1){
+                    if (ret.length === 1) {
                         // Add to data if unique visitors total exists
                         data['unique-vistors-total'] = ret[0].unique;
                     }
                     visitModel.fetchStatsByDay(req.params.slug, (err, ret, col) => {
                         // Ensures that only one record is returned
-                        if (ret.length > 0){
+                        if (ret.length > 0) {
                             // Array of visit frequency by day
                             data['daily-visit-frequency'] = ret
                             utils.respondWithData(res, data);
