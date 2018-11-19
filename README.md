@@ -50,6 +50,7 @@ $ yarn install
 $ yarn run start
 ````
 ## How to test
+note: if possible, use Postman extension for Chrome. It's easier to visualize I/O.
 
 ### Test case 1
 ````
