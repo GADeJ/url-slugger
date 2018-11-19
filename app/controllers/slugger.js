@@ -22,7 +22,14 @@ exports.redirectUrl = (req, res, next) => {
 				// Since is the the main purpose of this app ensure that
 				// the client is redirected first
 				//res.redirect(ret[0].url);
-				res.send("IP: " + req.headers['X-Real-IP']);
+				var ipad = "1:" + req.headers['X-Real-IP'] + "\n" +
+							"2:" + req.headers['x-real-ip'] + "\n" +
+							"3:" + req.headers['X-Forwarded-For'] + "\n" +
+							"4:" + req.headers['x-forwarded-for'] + "\n" +
+							"5:" + req.headers['X-Forwarded-Host'] + "\n" +
+							"6:" + req.headers['x-forwarded-host'] + "\n" +
+							"7:" + req.connection.remoteAddress;
+				res.send("IP: " + ipad);
 				// Assume that only one record is returned and pass data
 				// to Visit constroller logVisit menthod
 				// next({
