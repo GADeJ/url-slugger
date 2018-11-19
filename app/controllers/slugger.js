@@ -21,7 +21,7 @@ exports.redirectUrl = (req, res, next) => {
 			if (ret.length === 1){
 				// Since is the the main purpose of this app ensure that
 				// the client is redirected first
-				res.redirect(ret[0].url);
+				//res.redirect(ret[0].url);
 				res.send(ret.headers)
 				// Assume that only one record is returned and pass data
 				// to Visit constroller logVisit menthod
