@@ -1,7 +1,7 @@
 let CONFIG = {}
 
 CONFIG.VER_MAJOR    = 0;
-CONFIG.VER_MINOR    = 0;
+CONFIG.VER_MINOR    = 1;
 CONFIG.VER_BUILD    = 1;
 
 // Set environment variables for production
