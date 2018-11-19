@@ -4,12 +4,10 @@ var connection = require("../../database/mysql");
 
 // TODO: Deal with SQL injection
 var Visit = {
-
     logVisit: (slug_id, ipv4, callback) => {
         return connection.query("INSERT INTO visit (slug_id, ipv4) VALUES (?, ?)",
                                 [slug_id, ipv4], callback);
     },
-
     // Last 60 days of frequency of visits
     fetchStatsByDay: (slug, callback) => {
         return connection.query("SELECT YEAR(visit.timestamp) AS year, " +
@@ -22,17 +20,20 @@ var Visit = {
                                 "LIMIT 60",
                                 [slug], callback);
     },
-
     fetchInfo: (slug, callback) => {
-        return connection.query("SELECT slugger.slug AS slug, " +
+        return connection.query("SELECT slugger.id AS id " +
+                                "slugger.slug AS slug, " +
                                 "slugger.url AS url, " +
                                 "slugger.timestamp AS created, " +
                                 "COUNT(visit.id) AS count " +
                                 "FROM slugger, visit " +
                                 "WHERE slugger.slug = ? AND slugger.id = visit.slug_id",
                                 [slug], callback);
+    },
+    fetchUniqueVisitors: (slug_id, callback) => {
+        return connection.query("SELECT COUNT(DISTINCT ipv4) " +
+                                "FROM visit " +
+                                "WHERE visit.slug_id = ?",
+                                [slug_id], callback);
     }
-
 };
-
-module.exports = Visit;

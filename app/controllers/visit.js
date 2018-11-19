@@ -46,17 +46,23 @@ exports.fetchStats = (req, res, next) => {
                     created: ret[0].created,
                     count:   ret[0].count,
                 }
-                visitModel.fetchStatsByDay(req.params.slug, (err, ret, col) => {
-                    // Ensures that only one record is returned
-                    if (ret.length > 0){
-                        // Array of visit frequency by day
-                        data['daily-visit-frequency'] = ret
-                        utils.respondWithData(res, data);
+                visitModel.fetchUniqueVisitors(ret[0].id, (err, ret, col) => {
+                    if (ret.length === 1){
+                        // Add to data if unique visitors total exists
+                        data['unique-vistors-total'] = ret[0].unique;
                     }
-                    else {
-                        // Return error: Unable to find slug
-                        utils.respondWithCode(res, 101);
-                    }
+                    visitModel.fetchStatsByDay(req.params.slug, (err, ret, col) => {
+                        // Ensures that only one record is returned
+                        if (ret.length > 0){
+                            // Array of visit frequency by day
+                            data['daily-visit-frequency'] = ret
+                            utils.respondWithData(res, data);
+                        }
+                        else {
+                            // Return error: Unable to find slug
+                            utils.respondWithCode(res, 101);
+                        }
+                    });
                 });
             }
             else {
