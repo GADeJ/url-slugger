@@ -20,8 +20,8 @@ router.get("/:slug/stats", visitController.fetchStats);
 router.get("/", (req, res) => {
     res.json({
         api: {
-            version_: CONFIG.VER_MAJOR + "." +
-                     CONFIG.VER_MAJOR + "." +
+            version: CONFIG.VER_MAJOR + "." +
+                     CONFIG.VER_MINOR + "." +
                      CONFIG.VER_BUILD,
             nuid: CONFIG.NUID
         }
