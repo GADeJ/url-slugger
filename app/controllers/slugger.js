@@ -21,20 +21,13 @@ exports.redirectUrl = (req, res, next) => {
 			if (ret.length === 1) {
 				// Since is the the main purpose of this app ensure that
 				// the client is redirected first
-				//res.redirect(ret[0].url);
-				var ipa = "1:" + req.ip +
-						  "2:" + req.connection.remoteAddress +
-						  "3:" + req.headers['X-Real-IP'] +
-						  "4:" + req.headers['x-real-ip'] +
-						  "5:" + req.headers['X-Forwarded-For'] +
-						  "6:" + req.headers['x-forwarded-for']
-				res.send(ipa);		  
+				res.redirect(ret[0].url);
 				// Assume that only one record is returned and pass data
 				// to Visit constroller logVisit menthod
-				// next({
-					// slug_id: ret[0].id,
-					// ipv4: req.connection.remoteAddress
-				// });
+				next({
+					slug_id: ret[0].id,
+					ipv4: req.headers['x-real-ip'] || req.headers['x-forwarded-for']
+				});
 			}
 			else {
 				// Return error: Unable to find slug
