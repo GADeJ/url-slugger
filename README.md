@@ -78,21 +78,23 @@ $ curl -d '{"slug":"CuStOm10","url":"https://www.twitter.com"}' -H 'Content-Type
 ### Test case 5
 ````
 Retrieve stats from slug:
-$ curl -d 'http://glaudson.com/CUSTOM1'
+$ curl -d 'http://glaudson.com/IfhMQxiTl'
 {
-  "status":"success",
-  "data":{
-    "slug":"CUSTOM1",
-    "url":"https://www.reddit.com",
-    "created":"2018-11-16T06:00:02.000Z",
-    "count":9,
-    "daily-visit-frequency":[
-      {
-        "year":2018,
-        "month":11,
-        "day":16,
-        "count":9
-      }]
-  }
+    "status": "success",
+    "data": {
+        "slug": "IfhMQxiTl",
+        "url": "https://www.google.com",
+        "created": "2018-11-19T10:28:49.000Z",
+        "total-visits": 11,
+        "unique-vistors": 1,
+        "daily-visit-frequency": [
+            {
+                "year": 2018,
+                "month": 11,
+                "day": 19,
+                "count": 11
+            }
+        ]
+    }
 }
 ````
