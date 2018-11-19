@@ -82,7 +82,7 @@ $ curl -d 'http://glaudson.com/CUSTOM1'
 {
     "status": "success",
     "data": {
-        "slug": "IfhM2283_",
+        "slug": "IfhMQxiTl",
         "url": "https://www.google.com",
         "created": "2018-11-19T10:28:49.000Z",
         "total-visits": 11,
