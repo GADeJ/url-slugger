@@ -34,8 +34,6 @@ exports.redirectUrl = (req, res, next) => {
 				utils.respondWithCode(res, 105);
 			}
 		});
-		// Database unreacheable
-		utils.respondWithCode(res, 106);
 	}
 
 };
