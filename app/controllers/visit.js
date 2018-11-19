@@ -17,7 +17,9 @@ exports.logVist = (data, req, res, next) => {
                 throw err;
             }
     	});
-  	}
+      }
+      // Throw error so it's caught by the system log
+      throw new Error("Unable to log visit");
 };
 
 /**
@@ -30,7 +32,7 @@ exports.fetchStats = (req, res, next) => {
     if (!slug.isValid(req.params.slug)) {
         // Return error: Invalid slug
         utils.respondWithCode(res, 101);
-      }
+    }
     else {
         visitModel.fetchInfo(req.params.slug, (err, ret, col) => {
             // Ensures that only one record is returned
@@ -60,5 +62,7 @@ exports.fetchStats = (req, res, next) => {
                 utils.respondWithCode(res, 101);
             }
         });
+        // Database unreacheable
+		utils.respondWithCode(res, 106);
     }
 };

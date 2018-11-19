@@ -34,6 +34,8 @@ exports.redirectUrl = (req, res, next) => {
 				utils.respondWithCode(res, 105);
 			}
 		});
+		// Database unreacheable
+		utils.respondWithCode(res, 106);
 	}
 
 };
@@ -48,33 +50,41 @@ exports.redirectUrl = (req, res, next) => {
 exports.generateSlug = (req, res, next) => {
 	if (url.isValid(req.body.url)) {
 		sluggerModel.fetchByUrl(req.body.url, (err, ret, col) => {
-			// Check is slug in empty then return the slug that was found
-			if (ret.length > 0 && !req.body.slug){
-				// Assume that only one record is returned
-				utils.respondWithData(res, {slug: ret[0].slug, url: ret[0].url});
+			if (err) {
+				// Data unreacheable
+				utils.respondWithCode(res, 106);
 			}
 			else {
-				// Check if trying to create a custom slug
-				var custom = true;
-
-				if (!slug.isValid(req.body.slug)) {
-					custom = false;
-					req.body['slug'] = slug.generate();
+				// Check is slug in empty then return the slug that was found
+				if (ret.length > 0 && !req.body.slug){
+					// Assume that only one record is returned
+					utils.respondWithData(res, {slug: ret[0].slug, url: ret[0].url});
 				}
-				sluggerModel.createSlug(req.body.slug, req.body.url, custom, (err, ret, col) => {
-					if (err) {
-						// Return error: duplicate slug
-						utils.respondWithCode(res, 103);
+				else {
+					// Check if trying to create a custom slug
+					var custom = true;
+
+					if (!slug.isValid(req.body.slug)) {
+						custom = false;
+						req.body['slug'] = slug.generate();
 					}
-					else {
-						// Send slug to API caller
-						utils.respondWithData(res, {slug: req.body.slug, url: req.body.url});
-					}
-				});
+					sluggerModel.createSlug(req.body.slug, req.body.url, custom, (err, ret, col) => {
+						if (err) {
+							// Return error: duplicate slug
+							utils.respondWithCode(res, 103);
+						}
+						else {
+							// Send slug to API caller
+							utils.respondWithData(res, {slug: req.body.slug, url: req.body.url});
+						}
+					});
+				}
 			}
 		});
-	  }
-	  else {
+		// Database unreacheable
+		utils.respondWithCode(res, 106);
+	}
+	else {
 		// Return error: Invalid URL
 		utils.respondWithCode(res, 104);
 	}
