@@ -44,7 +44,7 @@ exports.fetchStats = (req, res, next) => {
                     slug:    ret[0].slug,
                     url:     ret[0].url,
                     created: ret[0].created,
-                    count:   ret[0].count,
+                    count:   ret[0].count
                 }
                 visitModel.fetchUniqueVisitors(ret[0].id, (err, ret, col) => {
                     if (ret.length === 1) {
