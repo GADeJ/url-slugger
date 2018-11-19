@@ -81,8 +81,6 @@ exports.generateSlug = (req, res, next) => {
 				}
 			}
 		});
-		// Database unreacheable
-		utils.respondWithCode(res, 106);
 	}
 	else {
 		// Return error: Invalid URL
