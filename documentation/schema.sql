@@ -20,15 +20,7 @@
 --
 
 CREATE USER 'api'@'%' IDENTIFIED WITH mysql_native_password BY '!EasyD0351t;';
-CREATE USER 'api'@'localhost' IDENTIFIED WITH mysql_native_password BY '!EasyD0351t;';
-CREATE USER 'api'@'172.17.0.4' IDENTIFIED WITH mysql_native_password BY '!EasyD0351t;';
-CREATE USER 'api'@'172.17.0.5' IDENTIFIED WITH mysql_native_password BY '!EasyD0351t;';
-CREATE USER 'api'@'172.17.0.6' IDENTIFIED WITH mysql_native_password BY '!EasyD0351t;';
 GRANT ALL PRIVILEGES ON *.* TO 'api'@'%';
-GRANT ALL PRIVILEGES ON *.* TO 'api'@'localhost';
-GRANT ALL PRIVILEGES ON *.* TO 'api'@'172.17.0.4';
-GRANT ALL PRIVILEGES ON *.* TO 'api'@'172.17.0.5';
-GRANT ALL PRIVILEGES ON *.* TO 'api'@'172.17.0.6';
 FLUSH PRIVILEGES;
 
 
