@@ -49,7 +49,7 @@ exports.fetchStats = (req, res, next) => {
                 visitModel.fetchUniqueVisitors(ret[0].id, (err, ret, col) => {
                     if (ret.length === 1) {
                         // Add to data if unique visitors total exists
-                        data['unique-vistors-total'] = ret[0].unique;
+                        data['unique-vistors-total'] = ret[0].visitors;
                     }
                     visitModel.fetchStatsByDay(req.params.slug, (err, ret, col) => {
                         // Ensures that only one record is returned
