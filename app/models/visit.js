@@ -28,13 +28,13 @@ var Visit = {
                                 "FROM slugger, visit " +
                                 "WHERE slugger.slug = ? AND slugger.id = visit.slug_id",
                                 [slug], callback);
-    }/*,
+    },
     fetchUniqueVisitors: (slug_id, callback) => {
         return connection.query("SELECT COUNT(DISTINCT ipv4) " +
                                 "FROM visit " +
                                 "WHERE visit.slug_id = ?",
                                 [slug_id], callback);
-    }*/
+    }
 };
 
 module.exports = Visit;
