@@ -14,7 +14,7 @@ exports.redirectUrl = (req, res, next) => {
 	if (!slug.isValid(req.params.slug)) {
 		// Return error: Invalid slug
 		utils.respondWithCode(res, 101);
-	  }
+	}
 	else {
 		sluggerModel.fetchBySlug(req.params.slug, (err, ret, col) => {
 			// Ensures that only one record is returned
