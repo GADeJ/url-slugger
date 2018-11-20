@@ -28,8 +28,7 @@ var Visit = {
                                 "COUNT(visit.ipv4) AS count, " +
                                 "COUNT(visit.ipv4) AS unique " +
                                 "FROM slugger, visit " +
-                                "WHERE slugger.slug = ? AND slugger.id = visit.slug_id " +
-                                "GROUP BY visit.ipv4",
+                                "WHERE slugger.slug = ? AND slugger.id = visit.slug_id GROUP BY visit.ipv4",
                                 [slug], callback);
     },
     fetchUniqueVisitors: (slug_id, callback) => {
