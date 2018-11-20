@@ -1,10 +1,10 @@
 ### Currently hosted @ http://glaudson.com
-Working sample:
-[http://glaudson.com/LKeOG9l8y](http://glaudson.com/LKeOG9l8y)
-[http://glaudson.com/PK937cwKK](http://glaudson.com/PK937cwKK)
-[http://glaudson.com/a23MmpKUn](http://glaudson.com/a23MmpKUn)
+* Working sample:
+  1. [http://glaudson.com/LKeOG9l8y]
+  2. [http://glaudson.com/PK937cwKK]
+  3. [http://glaudson.com/a23MmpKUn]
 
-[http://glaudson.com/PHONES18](http://glaudson.com/PHONES18)
+  4. [http://glaudson.com/PHONES18]
 
 ----
 
