@@ -7,7 +7,8 @@ const errorMessages = {
     103: "Unable to create slug",
     104: "Unspecified url",
     105: "Slug not found",
-    106: "Data unrecheable"
+    106: "Data unrecheable",
+    107: "Stats not yet available"
 }
 
 var Utils = {
