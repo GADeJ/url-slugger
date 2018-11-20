@@ -1,5 +1,5 @@
 ### Currently hosted @ http://glaudson.com
-* Working sample:
+Working sample:
 1. http://glaudson.com/LKeOG9l8y
 2. http://glaudson.com/PK937cwKK
 3. http://glaudson.com/a23MmpKUn
