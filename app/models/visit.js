@@ -26,7 +26,7 @@ var Visit = {
                                 "slugger.url AS url, " +
                                 "slugger.timestamp AS created, " +
                                 "COUNT(visit.ipv4) AS count, " +
-                                "COUNT(visit.ipv4) AS unique " +
+                                "COUNT(DISTINCT visit.ipv4) AS visitors " +
                                 "FROM slugger, visit " +
                                 "WHERE slugger.slug = ? AND slugger.id = visit.slug_id GROUP BY visit.ipv4",
                                 [slug], callback);
