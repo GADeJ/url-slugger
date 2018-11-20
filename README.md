@@ -3,10 +3,10 @@ Working sample:
 1. http://glaudson.com/LKeOG9l8y
 2. http://glaudson.com/PK937cwKK
 3. http://glaudson.com/a23MmpKUn
-
 4. http://glaudson.com/PHONES18
 
 ----
+
 
 # Project: url-slugger
 **URL shortner**
