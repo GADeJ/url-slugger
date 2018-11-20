@@ -48,6 +48,7 @@ exports.fetchStats = (req, res, next) => {
                     "unique-vistors": ret[0].visitors
                 }
                 visitModel.fetchStatsByDay(req.params.slug, (err, ret, col) => {
+                    res.json(ret);
                     // Ensures that only one record is returned
                     if (ret.length > 0) {
                         // Array of visit frequency by day
