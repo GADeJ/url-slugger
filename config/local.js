@@ -2,7 +2,7 @@ let CONFIG = {}
 
 CONFIG.VER_MAJOR    = 0;
 CONFIG.VER_MINOR    = 1;
-CONFIG.VER_BUILD    = 1;
+CONFIG.VER_BUILD    = 2;
 
 // Set environment variables for production
 CONFIG.APP          = process.env.APP       || "url-slugger";
