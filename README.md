@@ -7,8 +7,6 @@ Working sample:
 
 ----
 
-
-
 # Project: url-slugger
 **URL shortner**
 
