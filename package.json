@@ -1,23 +1,26 @@
-{
-  "name": "url-slug",
-  "version": "1.0.0",
-  "main": "server.js",
-  "repository": "git@github.com:GADeJ/url-slug.git",
-  "author": "Glaudson deJesus <Glaudson.deJesus@byg.io>",
-  "license": "MIT",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "mysql": "^2.16.0",
-    "shortid": "^2.2.14",
-    "valid-url": "^1.0.9"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.6"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "development": "nodemon server.js"
-  }
+{   
+    "name": "url-slug",
+    "version": "1.0.0",
+    "main": "server.js",
+    "repository": "git@github.com:GADeJ/url-slug.git",
+    "author": "Glaudson deJesus <Glaudson.deJesus@byg.io>",
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "express": "^4.16.4",
+        "mysql": "^2.16.0",
+        "shortid": "^2.2.14",
+        "valid-url": "^1.0.9"
+    },
+    "devDependencies": {
+        "chai": "^4.2.0",
+        "chai-http": "^4.2.0",
+        "mocha": "^5.2.0",
+        "nodemon": "^1.18.6"
+    },
+    "scripts": {
+        "test": "mocha",
+        "start": "node server.js",
+        "development": "nodemon server.js"
+    }
 }
