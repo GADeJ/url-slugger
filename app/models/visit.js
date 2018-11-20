@@ -29,7 +29,7 @@ var Visit = {
                                 "COUNT(DISTINCT visit.ipv4) AS visitors " +
                                 "FROM slugger, visit " +
                                 "WHERE slugger.slug = ? AND slugger.id = visit.slug_id " +
-                                "GROUP BY visit.ipv4",
+                                "GROUP BY visit.slug_id",
                                 [slug], callback);
     }
 };
