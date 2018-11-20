@@ -1,9 +1,9 @@
 ### Currently hosted @ http://glaudson.com
 Working sample:
-1. http://glaudson.com/LKeOG9l8y
-2. http://glaudson.com/PK937cwKK
-3. http://glaudson.com/a23MmpKUn
-4. http://glaudson.com/PHONES18
+1. http://glaudson.com/Ngnv0DIWr
+2. http://glaudson.com/o8CziALdN
+3. http://glaudson.com/ClNjN6JWx
+4. http://glaudson.com/HPHONE18
 
 ----
 
