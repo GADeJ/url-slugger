@@ -37,6 +37,7 @@ exports.fetchStats = (req, res, next) => {
     }
     else {
         visitModel.fetchInfo(req.params.slug, (err, ret, col) => {
+            res.json(err);
             // Ensures that only one record is returned
             if (ret.length === 1) {
                 // Assume that only one record is returned
