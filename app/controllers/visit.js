@@ -52,13 +52,17 @@ exports.fetchStats = (req, res, next) => {
                     if (ret.length > 0) {
                         // Array of visit frequency by day
                         data['daily-visit-frequency'] = ret
+                        utils.respondWithData(res, data);
+                    }
+                    else {
+                        // Return error: Unable to find slug
+                        utils.respondWithCode(res, 101);
                     }
                 });
-                utils.respondWithData(res, data);
             }
             else {
                 // Return error: Unable to find slug
-                utils.respondWithCode(res, 101);
+                utils.respondWithCode(res, 107);
             }
         });
     }
