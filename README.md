@@ -1,10 +1,10 @@
 ### Currently hosted @ http://glaudson.com
 * Working sample:
-  1. http://glaudson.com/LKeOG9l8y
-  2. http://glaudson.com/PK937cwKK
-  3. http://glaudson.com/a23MmpKUn
+1. http://glaudson.com/LKeOG9l8y
+2. http://glaudson.com/PK937cwKK
+3. http://glaudson.com/a23MmpKUn
 
-  4. http://glaudson.com/PHONES18
+4. http://glaudson.com/PHONES18
 
 ----
 
@@ -40,7 +40,7 @@ note: custom slug must be 6 to 10  alpha numeric characters.
 ## How to run
 1. Ensure that you have the software above already installed
 2. Clone this repository
-3. COnfigure mysql then import slugger_database_schema.sql located in documentation directory
+3. Configure mysql then import slugger_database_schema.sql located in documentation directory
 4. Create the following environment variables:
 ````
 $ export DB_USER="username"
