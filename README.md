@@ -1,11 +1,11 @@
 ### Currently hosted @ http://glaudson.com
 ````
 Working sample:
-(http://glaudson.com/LKeOG9l8y)
-(http://glaudson.com/PK937cwKK)
-(http://glaudson.com/a23MmpKUn)
+[http://glaudson.com/LKeOG9l8y](http://glaudson.com/LKeOG9l8y)
+[http://glaudson.com/PK937cwKK](http://glaudson.com/PK937cwKK)
+[http://glaudson.com/a23MmpKUn](http://glaudson.com/a23MmpKUn)
 
-(http://glaudson.com/PHONES18)
+[http://glaudson.com/PHONES18](http://glaudson.com/PHONES18)
 ````
 ----
 
